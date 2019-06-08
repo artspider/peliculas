@@ -40,3 +40,10 @@ $router->post('users', 'UsersController@createUser');
   es este caso utilizamos el verbo http PUT
  *********************************************************************/
 $router->put('users/{id}', 'UsersController@updateUser');
+
+/*********************************************************************
+  http://peliculas.test/users/id
+  Nos envía al método =deleteUser= del controlador =UsersController=
+  es este caso utilizamos el verbo http DELETE
+ *********************************************************************/
+$router->delete('users/{id}', 'UsersController@deleteUser');

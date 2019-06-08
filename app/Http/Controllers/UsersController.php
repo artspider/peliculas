@@ -37,6 +37,12 @@ class UsersController extends Controller
         $user->update($request->json()->all());
         return response()->json($user, 200);
     }
+
+    function deleteUser(Request $request, $id){
+        $user = User::findorfail($id);
+        $user->delete();
+        return response()->json($user, 200);
+    }
 }
 
 
