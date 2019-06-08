@@ -18,6 +18,19 @@ class UsersController extends Controller
         $users = User::find($id);
         return response()->json($users, 200);
     }
+
+    function createUser(Request $request){
+        $data = $request->all();
+        $user = User::create([
+            'name' => $data['name'],
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'remember_token' => $data['remember_token'],
+            'api_token' => str_random(60)
+        ]);
+        return response()->json($user, 201);
+    }
 }
 
 

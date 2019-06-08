@@ -26,3 +26,10 @@ $router->get('users', 'UsersController@index');
   Nos envía al método =showOneUser= del controlador =UsersController=
  *********************************************************************/
 $router->get('users/{id}', 'UsersController@showOneUser');
+
+/*********************************************************************
+  http://peliculas.test/users/
+  Nos envía al método =createUser= del controlador =UsersController=
+  es este caso utilizamos el verbo http POST
+ *********************************************************************/
+$router->post('users', 'UsersController@createUser');
