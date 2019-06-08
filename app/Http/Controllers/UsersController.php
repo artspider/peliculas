@@ -31,6 +31,12 @@ class UsersController extends Controller
         ]);
         return response()->json($user, 201);
     }
+
+    function updateUser(Request $request, $id){
+        $user = User::findorfail($id);
+        $user->update($request->json()->all());
+        return response()->json($user, 200);
+    }
 }
 
 

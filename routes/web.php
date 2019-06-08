@@ -33,3 +33,10 @@ $router->get('users/{id}', 'UsersController@showOneUser');
   es este caso utilizamos el verbo http POST
  *********************************************************************/
 $router->post('users', 'UsersController@createUser');
+
+/*********************************************************************
+  http://peliculas.test/users/id
+  Nos envía al método =updateUser= del controlador =UsersController=
+  es este caso utilizamos el verbo http PUT
+ *********************************************************************/
+$router->put('users/{id}', 'UsersController@updateUser');
